@@ -23,3 +23,18 @@ Integrating AI models directly with production databases poses severe security r
 ---
 
 ## 📐 Architecture & Security Flow
+### Security Guardrails Included:
+* **Read-Only Enforcement:** Blocks `DROP`, `DELETE`, `ALTER`, and `TRUNCATE` commands for standard users.
+* **Parameterization & Escaping:** Ensures queries adhere to prepared statement structures.
+* **Audit Trail:** Logs every attempt and flagged query with timestamps into a secure log table.
+
+---
+
+## ⚡ Quick Start
+
+## 💻 Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Sakuratech11/DB-AI-Sentinel.git
+   cd DB-AI-Sentinel
