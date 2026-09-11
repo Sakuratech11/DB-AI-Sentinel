@@ -1,36 +1,15 @@
-import os
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from fastapi import FastAPI
+from routers.sentinel_router import router as sentinel_router
 
 app = FastAPI(
     title="DB-AI-Sentinel",
-    version="1.0.0",
-    description="Secure AI Database Assistant with Guardrails"
+    description="Sentinel de bases de datos con Inteligencia Artificial",
+    version="1.0.0"
 )
 
-class QueryRequest(BaseModel):
-    user_query: str
-
-# Lista básica de comandos SQL bloqueados por seguridad
-FORBIDDEN_COMMANDS = ["DROP", "DELETE", "ALTER", "TRUNCATE"]
+# Incluimos nuestro router modular
+app.include_router(sentinel_router)
 
 @app.get("/")
-async def root():
-    return {"message": "DB-AI-Sentinel API running smoothly."}
-
-@app.post("/query")
-async def process_query(request: QueryRequest):
-    query = request.user_query.upper()
-    
-    # Validación simple de guardrails
-    if any(cmd in query for cmd in FORBIDDEN_COMMANDS):
-        raise HTTPException(
-            status_code=400, 
-            detail="Operación no permitida por políticas de seguridad."
-        )
-    
-    return {
-        "status": "success",
-        "message": "Consulta validada correctamente.",
-        "input": request.user_query
-    }
+def ruta_raiz():
+    return {"mensaje": "¡Bienvenido a DB-AI-Sentinel! El servidor modular está en la cancha."}
