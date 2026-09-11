@@ -15,7 +15,7 @@ Integrating AI models directly with production databases poses severe security r
 
 ## 🛠️ Tech Stack & Skills Demonstrated
 
-* **Database Management:** PostgreSQL / MySQL (Schema design, indexing, query optimization, triggers).
+* **Database Management:** MariaDB / MySQL (Schema design, indexing, query optimization, triggers).
 * **Cybersecurity (Cisco Principles):** Input sanitization, SQL injection prevention, RBAC, API key encryption, and audit logging.
 * **Artificial Intelligence (Santander AI Frameworks):** LLM integration (Gemini / OpenAI API) for natural language to SQL translation.
 * **Backend:** Python (FastAPI / SQLAlchemy).
