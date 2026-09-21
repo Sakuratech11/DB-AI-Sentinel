@@ -27,6 +27,7 @@ def ejecutar_consulta_segura(pet: ConsultaRequest):
         mensaje=f"Consulta lista para análisis: {pet.query}",
         datos={"descripcion": pet.descripcion}
     )
+
 @router.get("/consultar-version-db")
 def consultar_version_db():
     conexion = obtener_conexion()
